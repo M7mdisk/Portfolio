@@ -1,0 +1,182 @@
+html {
+  color: White;
+  font-family: "Montserrat", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+#root {
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url(https://picsum.photos/2000/1000);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.navbar,
+.footer {
+  position: fixed;
+  left: 0;
+  padding: .75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #26292C;
+}
+.footer{
+  bottom: 0;
+}
+.main-section {
+  display: flex;
+  /* establish flex container */
+  flex-direction: column;
+  /* make main axis vertical */
+  justify-content: center;
+  /* center items vertically, in this case */
+  align-items: center;
+  height: calc(100vh - 40px);
+}
+
+.hero {
+  padding: 3.7em;
+  padding-bottom: 10px;
+  max-width: min-content;
+  max-height: 90vh;
+  background-color: #1C1F21;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.description {
+  font-size: 1.7rem;
+  font-family: "bitter";
+  font-style: italic;
+  text-align: justify, center;
+}
+i {
+  font-size: 36px;
+}
+.fab {
+  padding-bottom: 5px;
+  /* block-size: 30px; */
+}
+.item {
+  font-size: 18px;
+  margin: 10px;
+  font-family: Roboto;
+  font-weight: 250;
+  width: 80px;
+  height: 90px;
+  font-size: 1em;
+  text-align: center;
+  padding: 15px 15px 15px  15px;
+  border-radius: 10px;
+  background-color: #2F3437;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.items-container{
+  display: flex;
+  align-items: left;
+  justify-content: left;
+}
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
+
+hr{
+  width: 100%;
+  margin: 10px;
+}
+.switch {
+  margin: 10px;
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+span,
+p {
+  display: inline !important;
+}
+
+.see-more{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  text-decoration: none; 
+  background-color: none;
+  color: white;
+}
+.see-more:hover{
+  text-shadow: 0 0 2px white;
+}
+/* Hide default HTML checkbox */
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+
+/* The slider */
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+input:checked+.slider {
+  background-color: #2196F3;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+
+/* Rounded sliders */
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
