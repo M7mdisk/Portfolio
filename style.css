@@ -230,7 +230,9 @@ input:checked+.slider:before {
   justify-content: space-evenly;
   height: 150px;
   width: 250px;
-  background-image: url('https://picsum.photos/250/150');
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .hide{
   visibility:hidden
