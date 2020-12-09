@@ -9,7 +9,7 @@ html {
 }
 
 #root {
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url(https://picsum.photos/2000/1000);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url(https://picsum.photos/1000/500);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -27,21 +27,21 @@ html {
   background-color: #26292C;
 }
 .footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   bottom: 0;
 }
 .main-section {
   display: flex;
-  /* establish flex container */
   flex-direction: column;
-  /* make main axis vertical */
   justify-content: center;
-  /* center items vertically, in this case */
   align-items: center;
   height: calc(100vh - 40px);
 }
 
 .hero {
-  padding: 3.7em;
+  padding: 3.7em 3em 3.7em 3em;
   padding-bottom: 10px;
   max-width: min-content;
   max-height: 90vh;
@@ -52,7 +52,18 @@ html {
   justify-content: center;
   align-items: center;
 }
-
+#new {
+  height: 75vh;
+  width: 80vw;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#new > div  {
+  margin: 20px;
+}
 .description {
   font-size: 1.7rem;
   font-family: "bitter";
@@ -69,13 +80,13 @@ i {
 .item {
   font-size: 18px;
   margin: 10px;
-  font-family: Roboto;
-  font-weight: 250;
+  font-family: "Open Sans";
+  font-weight: 350;
   width: 80px;
   height: 90px;
   font-size: 1em;
   text-align: center;
-  padding: 15px 15px 15px  15px;
+  padding: 15px 10px 15px 10px;
   border-radius: 10px;
   background-color: #2F3437;
   display: flex;
@@ -84,7 +95,8 @@ i {
   align-items: center;
 }
 .items-container{
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
   align-items: left;
   justify-content: left;
 }
@@ -120,6 +132,7 @@ p {
 }
 .see-more:hover{
   text-shadow: 0 0 2px white;
+  cursor: pointer;
 }
 /* Hide default HTML checkbox */
 
@@ -179,4 +192,68 @@ input:checked+.slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+.slide-out-top {
+	-webkit-animation: slide-out-top 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: slide-out-top 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+@keyframes slide-out-top {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-1000px);
+    opacity: 0;
+    display: none;
+  }
+}
+.slide-in-bck-bottom {
+  display: flex !important;
+	animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@keyframes slide-in-bottom {
+  0% {
+    transform: translateY(1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.project-image{
+  color: white;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 150px;
+  width: 250px;
+  background-image: url('https://picsum.photos/250/150');
+}
+.hide{
+  visibility:hidden
+}
+
+.project-image:hover > .hide{
+  visibility: visible;
+}
+.project-image:hover {
+
+  box-shadow: inset 0 0 0 100vw rgba(0,0,0,0.4);
+}
+
+a { color: white; }
+
+.project{
+  
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 10px;
+  flex-direction: column;
+  background-color: #2F3437;
 }
