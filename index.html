@@ -3,6 +3,7 @@
 
 <head>
    <meta charset="UTF-8">
+   <link rel="icon" type="image/png" href="assets/favicon.ico">
    <title>Mohammad Iskandarany</title>
    <link rel="stylesheet" href="style.css">
    <link
@@ -32,7 +33,7 @@
          </div>
       </div>
       <div class="main-section">
-         <div class="hero">
+         <div class="hero" onscroll="alert(1)">
             <div class="title">
             </div>
             <div class="description">
@@ -102,6 +103,21 @@
                </div>
             </div>
             <div style="z-index: 1;" class="project">
+               <div style="background-image: url('assets/printed.png');" class="project-image">
+                  <div class="hide">
+                     <a href="printed.m7mdisk.tk"><i class="fas fa-eye"></i></a>
+                  </div>
+                  <div class="hide">
+                     <a href="https://github.com/M7mdisk/printed"><i class="fas fa-code"></i></a>
+                  </div>
+               </div>
+               <div class="product-desc" style="margin-top: 13px;">
+                  <div class="product-title">
+                     Printed (Startup Website)
+                  </div>
+               </div>
+            </div>
+            <div style="z-index: 1;" class="project">
                <div style="background-image: url('assets/calculator.png');" class="project-image">
                   <div class="hide">
                      <a href="https://m7mdisk.github.io/Javascript-Calculator/"><i class="fas fa-eye"></i></a>
@@ -116,21 +132,7 @@
                   </div>
                </div>
             </div>
-            <div style="z-index: 1;" class="project">
-               <div class="project-image">
-                  <div class="hide">
-                     <a href=""><i class="fas fa-eye"></i></a>
-                  </div>
-                  <div class="hide">
-                     <a href=""><i class="fas fa-code"></i></a>
-                  </div>
-               </div>
-               <div class="product-desc" style="margin-top: 13px;">
-                  <div class="product-title">
-                     Dashboard
-                  </div>
-               </div>
-            </div>
+
             <div style="z-index: 1;" class="project">
                <div style="background-image: url('assets/portfolio.png');" class="project-image">
                   <div class="hide">
@@ -155,12 +157,14 @@
    </div>
 </body>
 <script>
-   $('.hero').click(function () {
-      $('.hero').addClass('slide-out-top');
-      setTimeout(function () {
-         $('.hero').hide();
-      }, 250);
-      $('#new').addClass('slide-in-bck-bottom')
+   $('.see-more').click(function () {
+      $('.hero').attr('class','hero slide-out-top');
+    setTimeout(function () {
+       $('.hero').hide();
+    }, 250);
+    $('#new').attr('style','display:flex !important');
+    $('#new').attr('class','slide-in-bck-bottom')
+    onTop=false
    });
       // var language;
       // var langCheck = document.getElementById("lang-select");

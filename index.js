@@ -54,3 +54,27 @@ window.onload = function() {
     css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
     document.body.appendChild(css);
 };
+
+var onTop = true
+document.addEventListener("wheel", function (e) {
+    if (e.deltaY < 0 && onTop ==false)
+    {
+        $('#new').attr('class','slide-out-bottom')
+        setTimeout(function () {
+            $('.hero').show();
+            $('#new').attr('style','display:none !important');
+        }, 250);
+        $('.hero').attr('class','hero slide-in-bck-top');
+        onTop=true
+    
+    }else if (e.deltaY > 0 &&onTop ==true){
+    $('.hero').attr('class','hero slide-out-top');
+    setTimeout(function () {
+       $('.hero').hide();
+    }, 250);
+    $('#new').attr('style','display:flex !important');
+    $('#new').attr('class','slide-in-bck-bottom')
+    onTop=false
+    }
+})
+window.onscroll = function () { window.scrollTo(0, 0); };
