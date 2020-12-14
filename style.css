@@ -1,17 +1,26 @@
 html {
-  color: White;
   font-family: "Montserrat", sans-serif;
   overflow: scroll;
   overflow-x: hidden;
+  margin: 0; height: 100%; overflow: hidden
 }
-
+body{
+  color: white;
+  margin: 0; height: 100%; overflow: hidden
+}
 * {
   box-sizing: border-box;
   margin: 0;
 }
+.description {
+  font-size: 1.7em;
 
+  font-family: "bitter";
+  font-style: italic;
+  text-align: justify, center;
+}
 #root {
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url(https://picsum.photos/1800/00);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url(https://picsum.photos/1800/900);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -19,7 +28,6 @@ html {
 
 .navbar,
 .footer {
-  position: fixed;
   left: 0;
   padding: .75rem 2rem;
   display: flex;
@@ -29,6 +37,8 @@ html {
   background-color: #26292C;
 }
 .footer{
+  position: absolute;
+  bottom:  0px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,10 +49,10 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 40px);
+  height: 89vh;
 }
-
-.hero {
+@media screen and (min-width: 540px) {
+  .hero {
   padding: 3.7em 3em 3.7em 3em;
   padding-bottom: 10px;
   max-width: min-content;
@@ -53,31 +63,12 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-#new {
-  height: 75vh;
-  width: 80vw;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-#new > div  {
-  margin: 20px;
-}
+} */
 .description {
-  font-size: 1.7rem;
+  font-size: 1.7em;
   font-family: "bitter";
   font-style: italic;
   text-align: justify, center;
-}
-i {
-  font-size: 36px;
-}
-.fab {
-  padding-bottom: 5px;
-  /* block-size: 30px; */
 }
 .item {
   font-size: 18px;
@@ -102,6 +93,31 @@ i {
   align-items: left;
   justify-content: left;
 }
+}
+
+
+#new {
+  /* zoom:  0.5; */
+  height: 75%;
+  width: 80vw;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#new > div  {
+  margin: 1em;
+}
+
+i {
+  font-size: 36px;
+}
+.fab {
+  padding-bottom: 5px;
+  /* block-size: 30px; */
+}
+
 .break {
   flex-basis: 100%;
   height: 0;
@@ -225,13 +241,14 @@ input:checked+.slider:before {
   }
 }
 .project-image{
+  z-index: -1;
   color: white;
   display: flex;
   align-content: center;
   align-items: center;
   justify-content: space-evenly;
-  height: 150px;
-  width: 250px;
+  height: 90%;
+  width: 100%;
   background-position: center; /* Center the image */
   background-repeat: no-repeat;
   background-size: cover;
@@ -251,7 +268,10 @@ input:checked+.slider:before {
 a { color: white; }
 
 .project{
-  
+  width: 100%;
+  height: 100%;
+  max-width: 260px;
+  max-height: 200px;
   display: flex;
   align-content: center;
   align-items: center;
@@ -316,5 +336,68 @@ a { color: white; }
     -webkit-transform: translateZ(0) translateY(0);
             transform: translateZ(0) translateY(0);
     opacity: 1;
+  }
+}
+
+.fa-code:hover,.fa-eye:hover{
+  color: #E98A15 !important;
+
+}
+
+@media screen and (max-width: 540px) {
+  .items-container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: left;
+    justify-content: left;
+  }
+  .item {
+    white-space: normal !important;
+    font-size: 1em;
+    margin: 10px;
+    font-family: "Open Sans";
+    font-weight: 350;
+    width: 4.5em;
+    height: 5em;
+    text-align: center;
+    /* padding: 1.5em em 1.5em 1em; */
+    border-radius: 10px;
+    background-color: #2F3437;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .description {
+    font-size: 1.5em;
+    font-family: "bitter";
+    font-style: italic;
+    text-align: justify, center;
+  }
+  
+  .hero {
+    padding: 2em 2em 2em 2em;
+    padding-bottom: 10px;
+    max-width: min-content;
+    max-height: 90vh;
+    background-color: #1C1F21;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #new{
+    flex-direction: column;
+    margin: 0;
+  }
+  .project-image{
+    height: 144%;
+  }
+  .project{
+    height: 9em;
+  }
+  #new > div  {
+    margin: 0.5em;
   }
 }
